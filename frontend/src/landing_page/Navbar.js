@@ -2,7 +2,7 @@ import React from "react";
 
 function Navbar() {
     return (
-        <nav class="navbar navbar-expand-lg border-bottom" style={{backgroundColor: '#FFF'}}>
+        <nav class="navbar navbar-expand-lg border-bottom" style={{backgroundColor: '#FFF', position: 'sticky', top: 0, zIndex: 100}}>
             <div class="container p-3">
                 <a class="navbar-brand" href="#"><img src="media/images/logo.svg" alt="Logo" style={{width:"35%"}} /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +11,7 @@ function Navbar() {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Sign Up</a>
+                            <a class="nav-link active" href="#" >Sign Up</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="#">About</a>
