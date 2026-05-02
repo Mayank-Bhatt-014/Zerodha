@@ -25,3 +25,9 @@ code {
 .footer-link:hover{
   color: #007bff !important;
 }
+
+#supportWrapper{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
