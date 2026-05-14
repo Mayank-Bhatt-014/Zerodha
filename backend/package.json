@@ -1,19 +1,24 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Zerodha Backend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mayank-Bhatt-014/Zerodha.git"
-  },
-  "author": "",
+  "author": "Mayank Bhatt",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Mayank-Bhatt-014/Zerodha/issues"
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   },
-  "homepage": "https://github.com/Mayank-Bhatt-014/Zerodha#readme"
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.6.2",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^9.1.0"
+  }
 }
