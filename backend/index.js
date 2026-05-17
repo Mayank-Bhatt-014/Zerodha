@@ -1,6 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 const HoldingsModel = require('./model/HoldingsModel');
 const OrdersModel = require('./model/OrdersModel');
 const PositionsModel= require('./model/PositionsModel');
@@ -9,12 +11,29 @@ const PORT = process.env.PORT || 5000;
 const url = process.env.MONGODB_URI;
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: true })); // for reading data from the body of the request and parsing it to json format and extended: true to allow nested objects in the body of the request.
+app.use(cors());
+app.use(bodyParser.json());
+
 mongoose.connect(url);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
+
+app.get('/allHoldings', async(req, res) => {
+    let allHoldings = await HoldingsModel.find({});
+    res.json(allHoldings);
+
+
+});
+
+app.get('/allPositions', async(req, res) => {
+    let allPositions = await PositionsModel.find({});
+    res.json(allPositions);
+    
+});
 /*app.get('/addtempHoldings', async (req, res) => {
     let tempHoldings = [
         {
